@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0061EEEB1B7B9D2600B02C5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061EEEA1B7B9D2600B02C5E /* main.m */; };
+		0061EEEE1B7B9D2600B02C5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061EEED1B7B9D2600B02C5E /* AppDelegate.m */; };
+		0061EEF11B7B9D2600B02C5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061EEF01B7B9D2600B02C5E /* ViewController.m */; };
+		0061EEF41B7B9D2600B02C5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0061EEF21B7B9D2600B02C5E /* Main.storyboard */; };
+		0061EEF61B7B9D2600B02C5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0061EEF51B7B9D2600B02C5E /* Images.xcassets */; };
+		0061EF051B7B9D2600B02C5E /* BLEProgressViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061EF041B7B9D2600B02C5E /* BLEProgressViewTests.m */; };
+		0061EF131B7B9D9000B02C5E /* BLEProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061EF121B7B9D9000B02C5E /* BLEProgressIndicator.m */; };
+		0061EF161B7B9DCB00B02C5E /* BLEProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061EF151B7B9DCB00B02C5E /* BLEProgressBar.m */; };
+		0061EF191B7B9DDB00B02C5E /* BLEProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061EF181B7B9DDB00B02C5E /* BLEProgressView.m */; };
+		0061EF1D1B7BAD0F00B02C5E /* BLEProgressBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0061EF1C1B7BAD0F00B02C5E /* BLEProgressBaseView.m */; };
+		1CEF8223783D0860DD7E7DF8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6C6FCA07C9549DF80270F8 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0061EEFF1B7B9D2600B02C5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0061EEDD1B7B9D2600B02C5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0061EEE41B7B9D2600B02C5E;
+			remoteInfo = BLEProgressView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0061EEE51B7B9D2600B02C5E /* BLEProgressView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLEProgressView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0061EEE91B7B9D2600B02C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0061EEEA1B7B9D2600B02C5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0061EEEC1B7B9D2600B02C5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0061EEED1B7B9D2600B02C5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0061EEEF1B7B9D2600B02C5E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0061EEF01B7B9D2600B02C5E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0061EEF31B7B9D2600B02C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0061EEF51B7B9D2600B02C5E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0061EEFE1B7B9D2600B02C5E /* BLEProgressViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLEProgressViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0061EF031B7B9D2600B02C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0061EF041B7B9D2600B02C5E /* BLEProgressViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEProgressViewTests.m; sourceTree = "<group>"; };
+		0061EF111B7B9D9000B02C5E /* BLEProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEProgressIndicator.h; sourceTree = "<group>"; };
+		0061EF121B7B9D9000B02C5E /* BLEProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEProgressIndicator.m; sourceTree = "<group>"; };
+		0061EF141B7B9DCB00B02C5E /* BLEProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEProgressBar.h; sourceTree = "<group>"; };
+		0061EF151B7B9DCB00B02C5E /* BLEProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEProgressBar.m; sourceTree = "<group>"; };
+		0061EF171B7B9DDB00B02C5E /* BLEProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEProgressView.h; sourceTree = "<group>"; };
+		0061EF181B7B9DDB00B02C5E /* BLEProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEProgressView.m; sourceTree = "<group>"; };
+		0061EF1B1B7BAD0F00B02C5E /* BLEProgressBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEProgressBaseView.h; sourceTree = "<group>"; };
+		0061EF1C1B7BAD0F00B02C5E /* BLEProgressBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEProgressBaseView.m; sourceTree = "<group>"; };
+		4E5544F1A568E9D5764D529E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E069D1477EAD1DA5DAD590E7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FB6C6FCA07C9549DF80270F8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0061EEE21B7B9D2600B02C5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CEF8223783D0860DD7E7DF8 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0061EEFB1B7B9D2600B02C5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0061EEDC1B7B9D2600B02C5E = {
+			isa = PBXGroup;
+			children = (
+				0061EEE71B7B9D2600B02C5E /* BLEProgressView */,
+				0061EF011B7B9D2600B02C5E /* BLEProgressViewTests */,
+				0061EEE61B7B9D2600B02C5E /* Products */,
+				38A3929AF1BE383C9AF442A1 /* Pods */,
+				2223BF789CD9A0578C2D3252 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0061EEE61B7B9D2600B02C5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0061EEE51B7B9D2600B02C5E /* BLEProgressView.app */,
+				0061EEFE1B7B9D2600B02C5E /* BLEProgressViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0061EEE71B7B9D2600B02C5E /* BLEProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				0061EEEC1B7B9D2600B02C5E /* AppDelegate.h */,
+				0061EEED1B7B9D2600B02C5E /* AppDelegate.m */,
+				0061EEEF1B7B9D2600B02C5E /* ViewController.h */,
+				0061EEF01B7B9D2600B02C5E /* ViewController.m */,
+				0061EF1A1B7BA31E00B02C5E /* View */,
+				0061EEF21B7B9D2600B02C5E /* Main.storyboard */,
+				0061EEF51B7B9D2600B02C5E /* Images.xcassets */,
+				0061EEE81B7B9D2600B02C5E /* Supporting Files */,
+			);
+			path = BLEProgressView;
+			sourceTree = "<group>";
+		};
+		0061EEE81B7B9D2600B02C5E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0061EEE91B7B9D2600B02C5E /* Info.plist */,
+				0061EEEA1B7B9D2600B02C5E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0061EF011B7B9D2600B02C5E /* BLEProgressViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				0061EF041B7B9D2600B02C5E /* BLEProgressViewTests.m */,
+				0061EF021B7B9D2600B02C5E /* Supporting Files */,
+			);
+			path = BLEProgressViewTests;
+			sourceTree = "<group>";
+		};
+		0061EF021B7B9D2600B02C5E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0061EF031B7B9D2600B02C5E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0061EF1A1B7BA31E00B02C5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0061EF171B7B9DDB00B02C5E /* BLEProgressView.h */,
+				0061EF181B7B9DDB00B02C5E /* BLEProgressView.m */,
+				0061EF141B7B9DCB00B02C5E /* BLEProgressBar.h */,
+				0061EF151B7B9DCB00B02C5E /* BLEProgressBar.m */,
+				0061EF111B7B9D9000B02C5E /* BLEProgressIndicator.h */,
+				0061EF121B7B9D9000B02C5E /* BLEProgressIndicator.m */,
+				0061EF1B1B7BAD0F00B02C5E /* BLEProgressBaseView.h */,
+				0061EF1C1B7BAD0F00B02C5E /* BLEProgressBaseView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2223BF789CD9A0578C2D3252 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB6C6FCA07C9549DF80270F8 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		38A3929AF1BE383C9AF442A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E069D1477EAD1DA5DAD590E7 /* Pods.debug.xcconfig */,
+				4E5544F1A568E9D5764D529E /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0061EEE41B7B9D2600B02C5E /* BLEProgressView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0061EF081B7B9D2600B02C5E /* Build configuration list for PBXNativeTarget "BLEProgressView" */;
+			buildPhases = (
+				9E95B35BA2CE07CAF5B9402E /* Check Pods Manifest.lock */,
+				0061EEE11B7B9D2600B02C5E /* Sources */,
+				0061EEE21B7B9D2600B02C5E /* Frameworks */,
+				0061EEE31B7B9D2600B02C5E /* Resources */,
+				49DCB96614B86F1C53DEE7F2 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BLEProgressView;
+			productName = BLEProgressView;
+			productReference = 0061EEE51B7B9D2600B02C5E /* BLEProgressView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0061EEFD1B7B9D2600B02C5E /* BLEProgressViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0061EF0B1B7B9D2600B02C5E /* Build configuration list for PBXNativeTarget "BLEProgressViewTests" */;
+			buildPhases = (
+				0061EEFA1B7B9D2600B02C5E /* Sources */,
+				0061EEFB1B7B9D2600B02C5E /* Frameworks */,
+				0061EEFC1B7B9D2600B02C5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0061EF001B7B9D2600B02C5E /* PBXTargetDependency */,
+			);
+			name = BLEProgressViewTests;
+			productName = BLEProgressViewTests;
+			productReference = 0061EEFE1B7B9D2600B02C5E /* BLEProgressViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0061EEDD1B7B9D2600B02C5E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = blueeee;
+				TargetAttributes = {
+					0061EEE41B7B9D2600B02C5E = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					0061EEFD1B7B9D2600B02C5E = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 0061EEE41B7B9D2600B02C5E;
+					};
+				};
+			};
+			buildConfigurationList = 0061EEE01B7B9D2600B02C5E /* Build configuration list for PBXProject "BLEProgressView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0061EEDC1B7B9D2600B02C5E;
+			productRefGroup = 0061EEE61B7B9D2600B02C5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0061EEE41B7B9D2600B02C5E /* BLEProgressView */,
+				0061EEFD1B7B9D2600B02C5E /* BLEProgressViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0061EEE31B7B9D2600B02C5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0061EEF41B7B9D2600B02C5E /* Main.storyboard in Resources */,
+				0061EEF61B7B9D2600B02C5E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0061EEFC1B7B9D2600B02C5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		49DCB96614B86F1C53DEE7F2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E95B35BA2CE07CAF5B9402E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0061EEE11B7B9D2600B02C5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0061EF131B7B9D9000B02C5E /* BLEProgressIndicator.m in Sources */,
+				0061EEF11B7B9D2600B02C5E /* ViewController.m in Sources */,
+				0061EF161B7B9DCB00B02C5E /* BLEProgressBar.m in Sources */,
+				0061EF1D1B7BAD0F00B02C5E /* BLEProgressBaseView.m in Sources */,
+				0061EEEE1B7B9D2600B02C5E /* AppDelegate.m in Sources */,
+				0061EF191B7B9DDB00B02C5E /* BLEProgressView.m in Sources */,
+				0061EEEB1B7B9D2600B02C5E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0061EEFA1B7B9D2600B02C5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0061EF051B7B9D2600B02C5E /* BLEProgressViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0061EF001B7B9D2600B02C5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0061EEE41B7B9D2600B02C5E /* BLEProgressView */;
+			targetProxy = 0061EEFF1B7B9D2600B02C5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0061EEF21B7B9D2600B02C5E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0061EEF31B7B9D2600B02C5E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0061EF061B7B9D2600B02C5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0061EF071B7B9D2600B02C5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0061EF091B7B9D2600B02C5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E069D1477EAD1DA5DAD590E7 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = BLEProgressView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0061EF0A1B7B9D2600B02C5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E5544F1A568E9D5764D529E /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = BLEProgressView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0061EF0C1B7B9D2600B02C5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BLEProgressViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLEProgressView.app/BLEProgressView";
+			};
+			name = Debug;
+		};
+		0061EF0D1B7B9D2600B02C5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BLEProgressViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLEProgressView.app/BLEProgressView";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0061EEE01B7B9D2600B02C5E /* Build configuration list for PBXProject "BLEProgressView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0061EF061B7B9D2600B02C5E /* Debug */,
+				0061EF071B7B9D2600B02C5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0061EF081B7B9D2600B02C5E /* Build configuration list for PBXNativeTarget "BLEProgressView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0061EF091B7B9D2600B02C5E /* Debug */,
+				0061EF0A1B7B9D2600B02C5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0061EF0B1B7B9D2600B02C5E /* Build configuration list for PBXNativeTarget "BLEProgressViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0061EF0C1B7B9D2600B02C5E /* Debug */,
+				0061EF0D1B7B9D2600B02C5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0061EEDD1B7B9D2600B02C5E /* Project object */;
+}
