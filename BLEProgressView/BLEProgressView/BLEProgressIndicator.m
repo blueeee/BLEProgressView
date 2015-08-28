@@ -290,14 +290,11 @@
 -(void)getVelocity:(id)sender{
     if (self.progressState == BLEProgressStateRunning) {
         CGFloat velocity = (self.center.x - self.lastCenterX)/self.moveLength;
-        if (velocity - self.currentVelocity >0.003) {
-            ;
-        }
         self.currentVelocity = velocity;
         POPSpringAnimation *shakeAnim = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerRotation];
         CGFloat factor = 0.2 < self.currentVelocity*10 ? 0.2:self.currentVelocity*10;
         shakeAnim.toValue = @(-M_PI*factor);
-        NSLog(@"%f",self.currentVelocity);
+//        NSLog(@"%f",self.currentVelocity);
         shakeAnim.springBounciness = 20;
         [self.layer pop_addAnimation:shakeAnim forKey:@"IndiRunStyleShakeAnim"];
         self.lastCenterX = self.center.x;
