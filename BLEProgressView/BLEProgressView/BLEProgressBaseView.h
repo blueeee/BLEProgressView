@@ -13,17 +13,29 @@
 @interface BLEProgressBaseView:UIView
 
 typedef enum BLEProgressState{
+    //初始
     BLEProgressStateOringin = 0,
+    //进度条生成
     BLEProgressStateReady,
+    //进度条执行
     BLEProgressStateRunning,
+    //完成即100%
     BLEProgressStateSuccess,
-    BLEProgressStatefailed
+    //失败动画中
+    BLEProgressStatefailAnim,
+    //失败
+    BLEProgressStatefailed,
+    //恢复到初始状态
+    BLEProgressStateResume
 } ProgressState;
 
 @property (nonatomic, assign) ProgressState progressState;
 @property (nonatomic, assign) CGFloat currentProgress;
 @property (nonatomic, weak) id<BLEProgressBaseViewDelegate> delegate;
 
+- (instancetype)initWithFrame:(CGRect)frame delegate:(id)delegate;
+
+-(void)originate;
 -(void)start;
 -(void)run;
 -(void)fail;
@@ -33,6 +45,7 @@ typedef enum BLEProgressState{
 -(void)generateReadyStyle;
 -(void)generateRunningStyle;
 -(void)generateFailStyle;
+-(void)generateResumeStyle;
 
 -(void)setProgress:(CGFloat)progress;
 

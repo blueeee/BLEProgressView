@@ -7,13 +7,12 @@
 //
 
 #import "BLEProgressView.h"
-#import "BLEProgressBar.h"
-#import "BLEProgressIndicator.h"
+
 @interface BLEProgressView()<BLEProgressBaseViewDelegate>
 @property (nonatomic, strong) BLEProgressBar *progressBar;
 @property (nonatomic, strong) BLEProgressIndicator *progressIndicator;
 
-@property (nonatomic, strong) CADisplayLink* displayLink;
+
 @end
 @implementation BLEProgressView
 #pragma mark - lifecycle
@@ -28,15 +27,15 @@
 }
 
 -(void)addProgressBar{
-    self.progressBar = [[BLEProgressBar alloc]initWithFrame:CGRectMake(0, 0, 96, 120)];
+    self.progressBar = [[BLEProgressBar alloc]initWithFrame:CGRectMake(0, 0, 96, 120) delegate:self];
+    [self.progressBar originate];
     self.progressBar.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
-    self.progressBar.delegate = self;
     [self addSubview:self.progressBar];
 }
 -(void)addIndicator{
-    self.progressIndicator = [[BLEProgressIndicator alloc]initWithFrame:CGRectMake(0, 0, 48, 60)];
+    self.progressIndicator = [[BLEProgressIndicator alloc]initWithFrame:CGRectMake(0, 0, 48, 60) delegate:self];
+    [self.progressIndicator originate];
     self.progressIndicator.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2+30);
-    self.progressIndicator.delegate = self;
     [self addSubview:self.progressIndicator];
 }
 #pragma mark -
@@ -52,14 +51,23 @@
     [self.progressBar run];
     [self.progressIndicator run];
     
-    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(display:)];
-    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-
 }
+
+-(void)resume{
+    if (self.progressIndicator.progressState == BLEProgressStatefailed && self.progressBar.progressState == BLEProgressStatefailed){
+        [self.progressBar resume];
+        [self.progressIndicator resume];
+    }
+    else if (self.progressIndicator.progressState == BLEProgressStateSuccess && self.progressBar.progressState == BLEProgressStateSuccess){
+        [self.progressBar resume];
+        [self.progressIndicator resume];
+    }
+}
+
 -(void)fail{
     
     if (self.progressIndicator.progressState == BLEProgressStateRunning && self.progressBar.progressState == BLEProgressStateRunning){
-        [self.displayLink removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        
         [self.progressBar fail];
         [self.progressIndicator fail];
     }
@@ -75,48 +83,65 @@
         self.progressBar.progressState = BLEProgressStateRunning;
         return;
     }
-    if (self.progressBar.progressState == BLEProgressStateRunning && self.progressIndicator.progressState == BLEProgressStateRunning) {
-        [self run];
-    }
-}
-#pragma mark - event response
--(void)display:(id)sender{
-    static float i = 0.f;
-    if (i > 100.f) {
-        [self setProgess:1];
-        [sender removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    else if (self.progressIndicator.progressState ==BLEProgressStatefailed && self.progressBar.progressState == BLEProgressStatefailAnim) {
+        self.progressBar.progressState = BLEProgressStatefailed;
         return;
     }
-    [self setProgess:i/100.f];
-    if (i<10) {
-        i += 1;
+    
+    if (self.progressBar.progressState == BLEProgressStateOringin && self.progressIndicator.progressState == BLEProgressStateOringin) {
+        if ([self.delegate respondsToSelector:@selector(progressView:didChangedState:)]) {
+            [self.delegate progressView:self didChangedState:BLEProgressStateOringin];
+        }
+        
     }
-    else if (i>=10 && i <20) {
-        i += 1;
+    else if(self.progressBar.progressState == BLEProgressStateReady && self.progressIndicator.progressState == BLEProgressStateReady){
+        if ([self.delegate respondsToSelector:@selector(progressView:didChangedState:)]) {
+            [self.delegate progressView:self didChangedState:BLEProgressStateReady];
+        }
+        
     }
-    else if (i>=20 && i <30) {
-        i += 0.2;
+    else if(self.progressBar.progressState == BLEProgressStateRunning && self.progressIndicator.progressState == BLEProgressStateRunning){
+        [self run];
+        if ([self.delegate respondsToSelector:@selector(progressView:didChangedState:)]) {
+            [self.delegate progressView:self didChangedState:BLEProgressStateRunning];
+        }
+        
     }
-    else if (i>=30 && i <40) {
-        i += 0.2;
+    else if(self.progressBar.progressState == BLEProgressStateSuccess && self.progressIndicator.progressState == BLEProgressStateSuccess){
+        if ([self.delegate respondsToSelector:@selector(progressView:didChangedState:)]) {
+            [self.delegate progressView:self didChangedState:BLEProgressStateSuccess];
+        }
+        
     }
-    else if (i>=40 && i <50) {
-        i += 1.5;
+    else if(self.progressBar.progressState == BLEProgressStatefailAnim && self.progressIndicator.progressState == BLEProgressStatefailAnim){
+        if ([self.delegate respondsToSelector:@selector(progressView:didChangedState:)]) {
+            [self.delegate progressView:self didChangedState:BLEProgressStatefailAnim];
+        }
+        
     }
-    else if (i>=50 && i <60) {
-        i += 1.5;
+    else if(self.progressBar.progressState == BLEProgressStatefailed && self.progressIndicator.progressState == BLEProgressStatefailed){
+        if ([self.delegate respondsToSelector:@selector(progressView:didChangedState:)]) {
+            [self.delegate progressView:self didChangedState:BLEProgressStatefailed];
+        }
+        
     }
-    else if (i>=60 && i <70) {
-        i += 1.5;
+    else if(self.progressBar.progressState == BLEProgressStateResume && self.progressIndicator.progressState == BLEProgressStateResume){
+        if ([self.delegate respondsToSelector:@selector(progressView:didChangedState:)]) {
+            [self.delegate progressView:self didChangedState:BLEProgressStateResume];
+        }
+        
     }
-    else if (i>=70 && i <80) {
-        i += 1.5;
-    }
-    else if (i>=80 && i <90) {
-        i += 1.5;
-    }
-    else {
-        i += 1.5;
+   
+    
+}
+#pragma mark - event response
+
+
+#pragma mark - setter and getter
+-(void)setDelegate:(id<BLEProgressViewDelegate>)delegate{
+    _delegate = delegate;
+    if ([_delegate respondsToSelector:@selector(progressView:didChangedState:)]) {
+        [_delegate progressView:self didChangedState:BLEProgressStateOringin];
     }
 }
 @end

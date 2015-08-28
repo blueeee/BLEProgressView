@@ -16,12 +16,10 @@
     return [[BLEProgressBaseView alloc]initWithFrame:frame];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame delegate:(id)delegate
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        [self generateOriginalStyle];
-    }
+    self.delegate = delegate;
     return self;
 }
 #pragma mark -
@@ -38,13 +36,21 @@
 }
 
 -(void)generateFailStyle{
-    self.progressState = BLEProgressStatefailed;
+    self.progressState = BLEProgressStatefailAnim;
+}
+
+-(void)generateResumeStyle{
+    self.progressState = BLEProgressStateResume;
 }
 
 -(void)setProgress:(CGFloat)progress{
     self.currentProgress = progress;
 }
 #pragma mark - 
+-(void)originate{
+    [self generateOriginalStyle];
+}
+
 -(void)start{
     [self generateReadyStyle];
 }
@@ -55,7 +61,7 @@
     [self generateFailStyle];
 }
 -(void)resume{
-
+    [self generateResumeStyle];
 }
 #pragma mark - getter and setter
 -(void)setProgressState:(ProgressState)progressState{

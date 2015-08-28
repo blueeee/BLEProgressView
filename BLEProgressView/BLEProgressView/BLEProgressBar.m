@@ -11,7 +11,6 @@
 @property (nonatomic) CGFloat barLength;
 @property (nonatomic ,strong) CAShapeLayer *loadlayer;
 @property (nonatomic ,strong) CAShapeLayer *triangleLayer;
-@property (nonatomic, strong) UIBezierPath *bezierPath;
 
 @end
 
@@ -31,11 +30,9 @@
 
 -(void)generateRunningStyle{
     [super generateRunningStyle];
-    if (!self.loadlayer ) {
-        self.loadlayer = [CAShapeLayer layer];
-        [self.loadlayer setFillColor:[UIColor whiteColor].CGColor];
-        [self.layer addSublayer:self.loadlayer];
-    }
+    self.loadlayer = [CAShapeLayer layer];
+    [self.loadlayer setFillColor:[UIColor whiteColor].CGColor];
+    [self.layer addSublayer:self.loadlayer];
 }
 
 -(void)generateFailStyle{
@@ -54,11 +51,19 @@
     self.triangleLayer = triangleLayer;
     
     [self startFailStyleEmitterAnimationWithCompletion:^{
-
         [self startFailStyleLoadBarDismissAnimation];
     }];
 
     
+}
+
+-(void)generateResumeStyle{
+    [super generateResumeStyle];
+    [self.triangleLayer removeFromSuperlayer];
+    [self.loadlayer removeFromSuperlayer];
+    [self startResumeStyleAnimWithCompletion:^{
+        self.progressState = BLEProgressStateOringin;
+    }];
 }
 
 -(void)setProgress:(CGFloat)progress{
@@ -67,7 +72,10 @@
     UIBezierPath *bezierPathNew = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(8.f, 0, (self.barLength-8)*progress, 8.f) byRoundingCorners:UIRectCornerTopRight|UIRectCornerBottomRight cornerRadii:CGSizeMake(4.f, 4.f)];
     [bezierPath appendPath:bezierPathNew];
     self.loadlayer.path = [bezierPath CGPath];
-
+    
+    if (progress == 1) {
+        self.progressState = BLEProgressStateSuccess;
+    }
 }
 #pragma mark - animation
 -(void)startReadyStyleAnimation{
@@ -161,6 +169,27 @@
     scaleYAnim.toValue = @0;
     [self.loadlayer pop_addAnimation:scaleYAnim forKey:@"BarFailStyleScaleYAnim"];
     
+    
+}
+
+-(void)startResumeStyleAnimWithCompletion:(void(^)())completion{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.4f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
+        
+        POPBasicAnimation *cornerResumeAnim = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerCornerRadius];
+        cornerResumeAnim.toValue = @6.f;
+        cornerResumeAnim.duration= 0.5f;
+        [self.layer pop_addAnimation:cornerResumeAnim forKey:@"BarResumeStyleCornerAnim"];
+        POPBasicAnimation *sizeResumeAnim = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerSize];
+        sizeResumeAnim.toValue = [NSValue valueWithCGSize:CGSizeMake(96, 120)];
+        sizeResumeAnim.duration = 0.5f;
+        [self.layer pop_addAnimation:sizeResumeAnim forKey:@"BarResumeStyleSizeAnim"];
+        [cornerResumeAnim setCompletionBlock:^(POPAnimation *anim, BOOL finish) {
+            if (completion) {
+                completion();
+            }
+        }];
+        
+    });
     
 }
 @end
